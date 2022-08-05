@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/SnackbarGetx.dart';
-import 'package:flutter_getx/StateManagementGetx.dart';
 import 'package:get/get.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -26,39 +25,58 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dialog Getx"),
-        centerTitle: true,
+        title: Text("BOTTOM SHEET GETX"),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // showDialog(
-            //     context: context,
-            //     builder: (context) => AlertDialog(
-            //           title: Text("INI JUDUL"),
-            //           content: Text("Isinya banyak"),
-            //           shape: RoundedRectangleBorder(
-            //               borderRadius: BorderRadius.circular(18)),
-            //         ));
-            // Get.defaultDialog(
-            //   title: "INI JUDUL",
-            //   middleText: "Ini adalah isi dari judul",
-            //   actions: [
-            //     ElevatedButton(
-            //       onPressed: () {},
-            //       child: Text("Cancel"),
+            // showModalBottomSheet(
+            //   context: context,
+            //   builder: (context) => Container(
+            //     height: 250,
+            //     color: Colors.white60,
+            //     child: ListView(
+            //       children: [
+            //         ListTile(
+            //           leading: Icon(Icons.home),
+            //           title: Text("Home"),
+            //         ),
+            //         ListTile(
+            //           leading: Icon(Icons.person),
+            //           title: Text("Profil"),
+            //         ),
+            //         ListTile(
+            //           leading: Icon(Icons.settings),
+            //           title: Text("Settings"),
+            //         ),
+            //       ],
             //     ),
-            //     ElevatedButton(onPressed: () {}, child: Text("Simpan"))
-            //   ],
+            //   ),
             // );
-            Get.dialog(AlertDialog(
-              title: Text("INI JUDUL"),
-              content: Text("Isinya banyak"),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18)),
-            ));
+            Get.bottomSheet(
+              Container(
+                height: 250,
+                color: Colors.white,
+                child: ListView(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.home),
+                      title: Text("Home"),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.person),
+                      title: Text("Profil"),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.settings),
+                      title: Text("Settings"),
+                    ),
+                  ],
+                ),
+              ),
+            );
           },
-          child: Text("Open Dialog"),
+          child: Text("OPEN BTM SHEET"),
         ),
       ),
     );
