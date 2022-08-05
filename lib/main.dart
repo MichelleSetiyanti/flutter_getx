@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: HomePage(),
     );
   }
@@ -18,10 +18,11 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   // const HomePage({Key? key}) : super(key: key);
-  int counter = 0;
-
+  // int counter = 0;
+  final testController = Get.put(CountController());
   @override
   Widget build(BuildContext context) {
+    print("Render");
     return Scaffold(
       appBar: AppBar(
         title: Text("GETX STATE MANAGEMENT"),
@@ -31,12 +32,25 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "$counter",
-              style: TextStyle(
-                fontSize: 50,
-              ),
-            ),
+            // Obx(
+            //   () => Text(
+            //     // "$counter",
+            //     "${testController.counter.value}",
+            //     style: TextStyle(
+            //       fontSize: 50,
+            //     ),
+            //   ),
+            // ),
+            Obx(() {
+              print("TEXT");
+              return Text(
+                // "$counter",
+                "${testController.counter.value}",
+                style: TextStyle(
+                  fontSize: 50,
+                ),
+              );
+            }),
             SizedBox(
               height: 20,
             ),
@@ -45,15 +59,17 @@ class HomePage extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    counter = counter - 1;
-                    print(counter);
+                    // counter = counter - 1;
+                    // print(counter);
+                    testController.decrement();
                   },
                   child: Text("-"),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    counter = counter + 1;
-                    print(counter);
+                    testController.increment();
+                    // counter = counter + 1;
+                    // print(counter);
                   },
                   child: Text("+"),
                 ),
@@ -64,4 +80,13 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class CountController extends GetxController {
+  var counter = 0.obs; // state yang akan selalu dipantau perubahaannnya
+  increment() {
+    counter = counter + 1;
+  }
+
+  decrement() => counter--;
 }
