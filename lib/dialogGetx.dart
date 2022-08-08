@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/SnackbarGetx.dart';
-import 'package:flutter_getx/StateManagementGetx.dart';
+import 'package:flutter_getx/ControllerGetx(Perkenalan).dart';
 import 'package:get/get.dart';
 
 void main(List<String> args) {
