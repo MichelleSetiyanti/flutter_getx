@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-// import 'package:flutter_getx/bottomsheetGetx.dart';
+import 'package:flutter/material.dart';
+import './pages/home.dart';
 import 'package:get/get.dart';
-import './pages/reactiveVariable.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
