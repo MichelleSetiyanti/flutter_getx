@@ -12,6 +12,30 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Workers Getx"),
       ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Obx(
+            () => Text(
+              "Terjadi perubahan : ${workersC.dataPantau} x",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: TextField(
+              onChanged: (value) => workersC.change(),
+              decoration: InputDecoration(
+                labelText: "Data",
+                border: OutlineInputBorder(),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
