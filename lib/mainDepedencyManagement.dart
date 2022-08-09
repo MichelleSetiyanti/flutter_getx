@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
+// import 'package:flutter_getx/bottomsheetGetx.dart';
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
-import './pages/1_route.dart';
+import './pages/page_satu.dart';
+import './controllers/page_satu_controller.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: HomePage(),
+      home: PageSatu(),
     );
   }
 }
