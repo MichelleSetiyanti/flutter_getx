@@ -16,14 +16,14 @@ class WorkersController extends GetxController {
     //   dataPantau,
     //   (data) => print("cuma pantau 2 detik"),
     //   time: Duration(seconds: 2),
-    // ); // dia punya interval
+    // ); // kalau debounce tiap berhenti baru kehitung gitu
     // super.onInit();
 
     interval(
       dataPantau,
       (data) => print("cuma pantau 2 detik"),
       time: Duration(seconds: 2),
-    ); // dia punya interval
+    ); //selama ada perubahan maka tetap berjalan
     super.onInit();
   }
 }
