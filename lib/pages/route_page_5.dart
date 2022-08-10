@@ -22,8 +22,9 @@ class PageLima extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigator.of(context).pop();
-                Get.offAll(
-                    HomePage()); // back langsung ke home hanya ada di dalam routing
+                Get.offAllNamed("/home");
+                // Get.offAll(
+                // HomePage()); // back langsung ke home hanya ada di dalam routing
                 // kek langsung aja gitu ya
                 // Get.back(HomePage()); // back langsung ke page 4
               },
@@ -32,21 +33,24 @@ class PageLima extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigator.of(context).pop();
-                Get.offAll(PageSatu());
+                Get.offAllNamed("/page_satu");
+                // Get.offAll(PageSatu());
               },
               child: Text("back to Page 1(Push Replacement)"),
             ),
             ElevatedButton(
               onPressed: () {
                 // Navigator.of(context).pop();
-                Get.offAll(PageDua());
+                Get.offAllNamed("/page_dua");
+                // Get.offAll(PageDua());
               },
               child: Text("back to Page 2 (PUSH REPLACEMENT)"),
             ),
             ElevatedButton(
               onPressed: () {
                 // Navigator.of(context).pop();
-                Get.offAll(PageTiga());
+                Get.offAllNamed("/page_tiga");
+                // Get.offAll(PageTiga());
               },
               child: Text("back to Page 3 (PUSH REPLACEMENT)"),
             ),

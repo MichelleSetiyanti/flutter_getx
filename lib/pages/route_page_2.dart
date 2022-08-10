@@ -19,7 +19,8 @@ class PageDua extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   // Navigator.of(context).pop();
-                  Get.to(PageTiga());
+                  // Get.to(PageTiga());
+                  Get.toNamed("/page_tiga");
                 },
                 child: Text("Next >>"))
           ],

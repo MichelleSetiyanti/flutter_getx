@@ -19,7 +19,8 @@ class PageEmpat extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   // Navigator.of(context).pop();
-                  Get.to(PageLima());
+                  // Get.to(PageLima());
+                  Get.toNamed("/page_lima");
                 },
                 child: Text("Next >>"))
           ],
