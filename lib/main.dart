@@ -1,36 +1,37 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/bindings/counter_binding.dart';
-import 'package:flutter_getx/controllers/counter_controller.dart';
-import 'package:flutter_getx/pages/counter.dart';
+import 'package:flutter_getx/bindings/login_binding.dart';
+import 'package:flutter_getx/pages/laoding.dart';
+import './pages/login.dart';
+import './pages/homegetstorage.dart';
 import 'package:get/get.dart';
-import './pages/bindings-1.dart';
+import 'package:get_storage/get_storage.dart';
+import 'controllers/login_controller.dart';
 
-void main(List<String> args) {
+void main() async {
+  await GetStorage.init();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // final LoginC = Get.lazyPut(() => LoginController());
   // const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: HomePage(),
-      // CARA AGAR TIDAK MEMBUAT BANYAK ROUTING DALAM BINDINGS
-
+      home: LaodingPage(),
+      // initialBinding: LoginBinding(),
       getPages: [
         GetPage(
-          name: "/Counter",
-          page: () => CounterPage(),
-          binding: CounterBindings(),
-          // binding: BindingsBuilder.put(
-          //   () => CounterController(),
-          // ),
-          // bindings: [
-          //   BindingsBuilder.put(
-          //       () => CounterController()), // Ini Bisa lebih dari 1 ya gais ya
-          // ],
+          name: "/login",
+          page: () => LoginPage(),
+          binding: LoginBinding(),
         ),
+        GetPage(
+          name: "/home",
+          page: () => HomePage(),
+        )
       ],
     );
   }
